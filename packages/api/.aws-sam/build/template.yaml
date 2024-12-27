@@ -1,0 +1,32 @@
+Transform: AWS::Serverless-2016-10-31
+Resources:
+  SampleLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: sample_lambda
+      CodeUri: SampleLambda
+      Handler: dist/src/handlers/users/get.handler
+      Runtime: nodejs22.x
+      Architectures:
+      - x86_64
+      Timeout: 30
+      MemorySize: 256
+      Environment:
+        Variables:
+          DATABASE_URL: ${env:DATABASE_URL}
+      Events:
+        GetApi:
+          Type: Api
+          Properties:
+            Path: /api
+            Method: GET
+            RestApiId:
+              Ref: SampleAPI
+    Metadata:
+      SamResourceId: SampleLambda
+  SampleAPI:
+    Type: AWS::Serverless::Api
+    Properties:
+      Name: sample_api
+      StageName: development
+      EndpointConfiguration: REGIONAL

@@ -1,0 +1,26 @@
+{
+  "editor.codeActionsOnSave": {
+    // 保存時にeslintでフォーマットする
+    "source.fixAll.eslint": "explicit"
+    // 未使用のimportを削除する
+    // "source.organizeImports": "explicit"
+  },
+  // 保存時にprettierでフォーマットする
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  // CSSファイル内でtailwindを有効にする
+  "files.associations": {
+    "*.css": "tailwindcss"
+  }
+}
