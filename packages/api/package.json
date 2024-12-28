@@ -7,7 +7,9 @@
     "db:start": "docker-compose up -t",
     "sam:synth": "cdk synth --no-staging > template.yaml",
     "sam:api": "sam local start-api --host 0.0.0.0 --container-host host.docker.internal --container-host-interface 0.0.0.0 --docker-network monorepo-network",
-    "sam:invoke": "sam local invoke"
+    "sam:invoke": "sam local invoke",
+    "seed:dev": "NODE_ENV=development npx ts-node prisma/seed.ts",
+    "seed:prd": "NODE_ENV=production npx ts-node prisma/seed.ts"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.146",

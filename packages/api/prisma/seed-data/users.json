@@ -1,0 +1,29 @@
+{
+  "users": [
+    {
+      "createdAt": "2024-01-01T00:00:00Z",
+      "email": "yamada.taro@example.com",
+      "name": "山田 太郎"
+    },
+    {
+      "createdAt": "2024-01-02T00:00:00Z",
+      "email": "tanaka.hanako@example.com",
+      "name": "田中 花子"
+    },
+    {
+      "createdAt": "2024-01-03T00:00:00Z",
+      "email": "suzuki.ichiro@example.com",
+      "name": "鈴木 一郎"
+    },
+    {
+      "createdAt": "2024-01-04T00:00:00Z",
+      "email": "sato.yuki@example.com",
+      "name": "佐藤 優希"
+    },
+    {
+      "createdAt": "2024-01-05T00:00:00Z",
+      "email": "nakamura.akiko@example.com",
+      "name": "中村 明子aaaa"
+    }
+  ]
+}
