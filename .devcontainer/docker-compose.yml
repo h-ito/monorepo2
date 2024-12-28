@@ -7,11 +7,37 @@ services:
     volumes:
       - $PWD:$PWD
     command: sleep infinity
-    networks: ["monorepo-network"]
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@local-postgres:5432/postgres
+      AWS_DEFAULT_REGION: ap-northeast-1
+      AWS_ACCESS_KEY_ID: dummy
+      AWS_SECRET_ACCESS_KEY: dummy
+    networks:
+      - monorepo-network
+    depends_on:
+      - db
     ports:
       - "3000:3000"
     extra_hosts:
       - host.docker.internal:host-gateway
+
+  db:
+    image: postgres:latest
+    container_name: local-postgres
+    restart: unless-stopped
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - monorepo-network
+
+volumes:
+  postgres-data:
 
 networks:
   monorepo-network:

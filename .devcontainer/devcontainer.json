@@ -29,6 +29,10 @@
   // Configure tool-specific properties.
   "customizations": {
     "vscode": {
+      "settings": {
+        // この設定を false にする
+        "dev.containers.dockerCredentialHelper": false
+      },
       "extensions": [
         "amazonwebservices.aws-toolkit-vscode",
         "bradlc.vscode-tailwindcss",

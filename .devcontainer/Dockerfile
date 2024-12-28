@@ -10,3 +10,13 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR ${LOCAL_WORKSPACE_FOLDER}
+
+RUN npm install -g prisma typescript @types/node
+
+# COPY package*.json ./
+
+# RUN npm ci
+
+# COPY prisma ./prisma/
+
+# RUN npx prisma generate

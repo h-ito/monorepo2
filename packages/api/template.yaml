@@ -30,3 +30,8 @@ Resources:
       Name: sample_api
       StageName: development
       EndpointConfiguration: REGIONAL
+    Cors:
+      AllowOrigin: "'*'"
+      AllowCredentials: true
+      AllowMethods: "'OPTIONS,GET,POST'"
+      AllowHeaders: "'Content-Type,X-CSRF-TOKEN'"

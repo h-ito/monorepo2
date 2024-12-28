@@ -4,8 +4,9 @@
   "scripts": {
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "db:start": "docker-compose up -t",
     "sam:synth": "cdk synth --no-staging > template.yaml",
-    "sam:api": "sam local start-api",
+    "sam:api": "sam local start-api --host 0.0.0.0 --container-host host.docker.internal --container-host-interface 0.0.0.0 --docker-network monorepo-network",
     "sam:invoke": "sam local invoke"
   },
   "devDependencies": {
@@ -20,5 +21,9 @@
     "@prisma/client": "^6.1.0",
     "aws-cdk-lib": "^2.173.3",
     "aws-lambda": "^1.0.7"
-  }
+  },
+  "files": [
+    "./dist",
+    "./prisma"
+  ]
 }
